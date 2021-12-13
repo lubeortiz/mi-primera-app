@@ -3,16 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PersonasComponent } from './personas/personas.component';
+import { PersonaComponent } from './persona/persona.component';
+import { FormsModule } from '@angular/forms'; //para usar two-way binding
 
-@NgModule({
+@NgModule({ // decoradores: sirven para dar caracteristicas extras
   declarations: [
-    AppComponent
+    AppComponent,
+    PersonasComponent,
+    PersonaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] //indica cómo se levanta la aplicación
 })
 export class AppModule { }

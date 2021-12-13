@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Listado de Personas</h1>
+      <button
+        class="btn btn-primary" 
+        [disabled]='deshabilitar'
+        (click)='agregarPersona()'> <!-- []property binding, ()event binding -->
+          Agregar persona
+      </button>
+      <p *ngIf="mostrar; else sinPersona">
+        {{ mensaje }} con el título de {{titulo}}
+      </p>
+      <ng-template #sinPersona>
+        <p>No se ha agregado ninguna persona</p>
+      </ng-template>
+
+      <app-persona></app-persona>
+
+      <label>Titulo Persona</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        [(ngModel)]="titulo" 
+      > <!-- (input)="modificarTitulo($event)" -->
+        <!-- ngModel es una directiva que guarda el valor que tenga la propiedad
+        titulo y actualiza dicha propiedad si el usuario la cambia desde
+        el input -->
+      {{titulo}}
+    </div>
+  </div>
+</div>
